@@ -3,7 +3,27 @@
 <head>
   <title>CountMyWords</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+  <style.chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #22c55e;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.chat-box {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 260px;
+  background: #1e293b;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}>
     body {
       font-family: Arial;
       background: #0f172a;
@@ -56,6 +76,17 @@
       document.getElementById("caracteres").innerText = texto.length;
     }
   </script>
+<!-- BOTÃO -->
+<div class="chat-btn" onclick="toggleChat()">💬</div>
 
+<!-- CHAT -->
+<div class="chat-box" id="chat" style="display:none;">
+  <div id="messages" style="height:150px; overflow:auto;"></div>
+
+  <input id="msg" placeholder="Digite sua mensagem..." />
+  <button onclick="responder()">Enviar</button>
+</div>
+
+<script src="js/suporte.js"></script>
 </body>
 </html>
