@@ -1,2 +1,61 @@
-<h1>Meu primeiro site</h1>
-<p>Funcionando 😎</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CountMyWords</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    textarea {
+      width: 80%;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+
+    .box {
+      margin-top: 20px;
+      font-size: 20px;
+      background: #1e293b;
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>📝 CountMyWords</h1>
+  <p>Digite seu texto abaixo:</p>
+
+  <textarea id="texto" oninput="contar()"></textarea>
+
+  <div class="box">
+    Palavras: <span id="palavras">0</span> |
+    Caracteres: <span id="caracteres">0</span>
+  </div>
+
+  <script>
+    function contar() {
+      let texto = document.getElementById("texto").value;
+
+      let palavras = texto.trim().split(/\s+/);
+      let totalPalavras = palavras[0] ? palavras.length : 0;
+
+      document.getElementById("palavras").innerText = totalPalavras;
+      document.getElementById("caracteres").innerText = texto.length;
+    }
+  </script>
+
+</body>
+</html>
